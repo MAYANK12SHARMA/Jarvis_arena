@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        
+        
+        
+        .save-btn{
+            display: grid;
+            place-content: center;
+        
+        
+        }
+        
+        .loader{
+            pointer-events: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 5px solid transparent; /* corrected */
+            border-top-color: #761414;
+            animation: an1 1s ease infinite;
+        
+        
+        }
+        
+        @keyframes an1{
+            0%{
+                transform: rotate(0turn);
+            }
+            100%{
+                transform: rotate(1turn);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <button class="save-btn">Save changes</button>
+
+
+        <script>
+            const saveBtn = document.querySelector('.save-btn');
+            saveBtn.onclick = function() {
+                this.innerHTML = '<div class="loader"></div>';
+                setTimeout(() => {
+                    this.innerHTML = 'Save changes';
+                }, 2000);
+            }
+            
+        </script>
+</body>
+</html>
